@@ -69,18 +69,10 @@ class DogCardAdapter(
 
     override fun onBindViewHolder(holder: DogCardViewHolder, position: Int) {
         val dog = dogList[position]
-        holder.dogImage?.setImageResource(dog.imageResourceId)
-        // TODO: Get the data at the current position
-        // TODO: Set the image resource for the current dog
-        // TODO: Set the text for the current dog's name
-        // TODO: Set the text for the current dog's age
         val resources = context?.resources
-//        holder.dogName?.text = resources?.getString(dog.name)
+        holder.dogImage?.setImageResource(dog.imageResourceId)
+        holder.dogName?.text = dog.name
         holder.dogAge?.text = resources?.getString(R.string.dog_age, dog.age)
         holder.dogHobbies?.text = resources?.getString(R.string.dog_hobbies, dog.hobbies)
-        // TODO: Set the text for the current dog's hobbies by passing the hobbies to the
-        //  R.string.dog_hobbies string constant.
-        //  Passing an argument to the string resource looks like:
-        //  resources?.getString(R.string.dog_hobbies, dog.hobbies)
     }
 }
